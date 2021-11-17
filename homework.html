@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>오늘의 투두</title>
+</head>
+<body>
+<style>
+#title {
+color: orange;
+}
+
+.wrap {
+display: flex;
+}
+.nowTodo {
+border: 1px solid orange;
+border-radius: 5px;
+padding: 2em;
+margin: 1em;
+width: 100px;
+height: 100px;
+display: flex;
+}
+
+button:hover {
+background-color: orange;
+}
+.nowTodo{
+    display: inline-block;
+}
+</style>
+
+<h1 id="title">오늘 할 일</h1>
+<input id="addTodo" type="text" value="">
+<button id="todoBtn" onclick="addList()">추가하기</button>
+<div id="todoList">
+
+</div>
+
+<script>
+    const addTodo = document.getElementById('addTodo');
+    const todoList = document.getElementById('todoList');
+
+    function addList(){
+        const div = document.createElement('div');
+        const h3 = document.createElement('h3');
+        const completeBtn = document.createElement('button');
+        const contentBtn = document.createTextNode('완료');
+        div.className = 'nowTodo';
+        contentBtn.className = 'complete';
+        h3.innerHTML = addTodo.value;
+
+        todoList.appendChild(div);
+        div.appendChild(h3);
+        div.appendChild(completeBtn);
+        completeBtn.appendChild(contentBtn);
+    }
+
+</script>
+</body>
+</html>
