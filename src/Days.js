@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import "./App.css";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-regular-svg-icons'
@@ -8,12 +9,15 @@ import { faHandPointRight } from '@fortawesome/free-regular-svg-icons'
 
 const star = <FontAwesomeIcon icon={faStar} />
 const arrow = <FontAwesomeIcon icon={faHandPointRight} />
-// Math.floor(Math.random() * 6)
+
 const Days = (props) => {
     const days = ['월','화', '수', '목', '금', '토', '일'];
-    const stars = [star,star,star,star,star];
+    const blackStar = <BlackStar>{star}</BlackStar>
+    const redStar = <RedStar>{star}</RedStar>
+    const stars = [redStar,redStar,redStar,redStar,redStar]
+    const originStars = [blackStar, blackStar, blackStar, blackStar, blackStar]
+    let temp = []
     let history = useHistory();
-
     return (
     <div className="App">
       <Box>
@@ -21,11 +25,12 @@ const Days = (props) => {
         {
         days.map((day,index) => {
             return (<Body key={index}>
-                        <Day>{day}</Day>
+                        <Day>{day}</Day>   
                         {
-                            stars.map((star, index) => {
-                                return (<Star key={index}>{star}</Star>)
-                            })
+                          temp = stars.slice(0,Math.floor(Math.random() * 6))
+                        }
+                        {
+                          temp.length < 5 ? originStars.slice(0,originStars.length-temp.length) : null  
                         }
                         <Arrow 
                         key={index}
@@ -65,7 +70,12 @@ const Day = styled.span`
     margin-right: 5px;
 `;
 
-const Star = styled.span`
+const RedStar = styled.span`
+    margin-right: 5px;
+    color: red;
+`;
+
+const BlackStar = styled.span`
     margin-right: 5px;
 `;
 
