@@ -1,8 +1,8 @@
-# 메일화면 (페이지 별 랜덤값 출력하기)  
+# 메인화면 (페이지 별 랜덤값 출력하기)  
 
 <img width="438" alt="스크린샷 2021-11-18 오후 3 29 59" src="https://user-images.githubusercontent.com/91178712/142364238-c017e2b4-e4c8-4df9-a48d-3b95c97523cc.png">
 
-# 메일화면 (페이지 별 랜덤값 출력하기)  
+# 메인화면 (페이지 별 랜덤값 출력하기)  
 
 <img width="438" alt="스크린샷 2021-11-18 오후 3 30 05" src="https://user-images.githubusercontent.com/91178712/142364245-e992283c-5af3-4153-845d-7e29f63a8072.png">
 
